@@ -1,0 +1,167 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Red Hat Display'; 
+    font-weight: 700;
+    font-size: 14px;
+    background-color: hsl(234, 17%, 12%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative; 
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+    top: 8rem;
+    position: absolute;
+    left: 40%;
+    letter-spacing: 5px;
+  }
+  
+  .countdown-container {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .time-box-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack time-box and label vertically */
+    align-items: center; /* Center the label horizontally with the time-box */
+  }
+  
+  .time-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(236, 21%, 26%);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0.5rem;
+    width: 8rem;
+    color: hsl(345, 95%, 68%);
+  }
+  
+  .time {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .label {
+    margin-top: 10px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: hsl(237, 18%, 59%);
+  }
+
+  /* Adding the background image at the bottom */
+body::after {
+    content: "";
+    background-image: url('./images/pattern-hills.svg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: bottom center; /* Sticks to the bottom of the page */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    z-index: 0; /* Ensures the image stays behind the content */
+  }
+  
+
+  /* Styling the social media icons */
+.social-media-icons {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 2;
+  }
+  
+  .social-media-icons a {
+    color: white;
+    transition: transform 0.3s;
+  }
+  
+  .social-media-icons a:hover {
+    transform: scale(1.2);
+  }
+
+
+  /* RESPONSIVE STYLING */
+
+/* Medium screen adjustments */
+@media (max-width: 768px) {
+    .title {
+        left: 33%;
+    }
+
+    .time-box {
+      width: 80px;
+      padding: 15px;
+    }
+  
+    .time {
+      font-size: 2rem;
+    }
+  
+    .countdown-container {
+      gap: 15px;
+    }
+  }
+  
+  /* Small screen adjustments */
+  @media (max-width: 480px) {
+    body {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+    }
+  
+    .countdown-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .title {
+        left: 0;
+        top: 0;
+        position: relative;
+    }
+  
+    .time-box {
+      width: 70px;
+      padding: 10px;
+    }
+  
+    .time {
+      font-size: 1.5rem;
+    }
+  
+    .social-media-icons {
+      gap: 10px;
+    }
+  
+    body::after {
+      height: 150px;
+    }
+  }
+  
